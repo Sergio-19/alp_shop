@@ -1,0 +1,22 @@
+
+.my__alert-wrap{
+    width: 100%;
+    /* max-width: 750px; */
+    position: fixed;
+    transition: .2s;
+    top: -100%;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.my__alert{
+    width: 100%;
+    max-width: 800px;
+  
+    
+}
+
+.my__alert-show{
+    top: 0;
+}

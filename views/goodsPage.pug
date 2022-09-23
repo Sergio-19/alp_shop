@@ -1,0 +1,37 @@
+include components/head.pug
+    div(class= 'main')
+        include components/popup.pug
+        include components/alert.pug
+        include components/header.pug
+        div(class= 'content')
+            div(class= 'container')
+                div(class="goods-page__wrap")
+                    div(class="goods-page__filters")
+                        div(class="goods-page__filters-search")
+                            h3 Поиск:
+                            span #{catId}
+                        div(class="goods-page__filters-filter") 
+                            span Сортировать по:
+                            a(href="/sort") возрастанию цены
+                            a(href="/sort") убыванию цены 
+                    div(class="goods-page__content") 
+                        each val, index in goods
+                            div(class="goods-page__card") 
+                                a(href = '/good?id='+val['article'] class="goods-page__card-img")  
+                                    img(src = val['images'])
+                                div(class="goods-page__card-price")  
+                                    strong #{val['price']}
+                                    span #{val['oldprice']} 
+                                div(class="goods-page__card-text") 
+                                    p #{val['name']}
+                                div(class="goods-page__card-rating")
+                                    p 
+                                        i(class="fa fa-star")
+                                        i(class="fa fa-star")
+                                        i(class="fa fa-star")
+                                        i(class="fa fa-star")
+                                        i(class="fa fa-star")
+                                    span #{val['article']}
+                                div(class="goods-page__card-btn")
+                                    button(class= 'add-to-cart' data-good_id = val['article']) Добавить в корзину                    
+        include components/footer.pug                                                                              

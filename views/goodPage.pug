@@ -1,0 +1,53 @@
+include components/head.pug
+    div(class= 'main')
+        include components/popup.pug
+        include components/alert.pug
+        include components/header.pug
+        div(class= 'content')
+            div(class= 'container')
+                div(class="good-page__title")
+                    h1 #{good['name']}
+                    div(class="good-page__title-rating")
+                        P 
+                            span(class="stars")
+                                i(class="fa fa-star")
+                                i(class="fa fa-star")
+                                i(class="fa fa-star")
+                                i(class="fa fa-star")
+                                i(class="fa fa-star")
+                            span(class="reviews") 6 отзывов
+                            span(class="reviews") Артикул:
+                                strong #{good['article']}
+                            span(class="reviews") Купили более 10 раз
+                div(class="good-page__wrap") 
+                    div(class="good-page__galery") 
+                        div(class="good-page__galery-big") 
+                            img(src = good['images']) 
+                        div(class="good-page__galery-small") 
+                    div(class="good-page__description-and-cart") 
+                        div(class="good-page__info") 
+                            div(class="good-page__shortdescription good-page__min-card") 
+                                p #{good['shortdescription']}
+                            div(class="good-page__characteristics good-page__min-card") 
+                                h4 Характеристики  
+                                ul 
+                                    each val, key in characteristics   
+                                        li 
+                                            strong #{val['char']}  
+                                            span #{val['value']} 
+                        div(class="good-page__cart good-page__min-card")  
+                            div(class="good-page__cart-price")  
+                                p 
+                                    strong #{good['price']} ₽
+                                    span #{good['oldprice']} ₽  
+                            div(class="good-page__cart-btn")
+                                button(type = 'button' class= 'add-to-cart' data-good_id= good['article']) Добавить в корзину 
+                            div(class="good-page__cart-delivery")
+                                p Товар в наличии
+                                    span Доставка в течение 10-12 дней
+                div(class="good-page__description")
+                        div(class="good-page__description-title") 
+                            h3 Описание 
+                        div(class="good-page__description-text  good-page__min-card")
+                            p #{good['description']}
+        include components/footer.pug                                                                              

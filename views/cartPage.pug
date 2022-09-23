@@ -1,0 +1,70 @@
+include components/head.pug
+    div(class= 'main')
+        include components/popup.pug
+        include components/header.pug
+        div(class= 'content')
+            div(class= 'container')
+                div(class="cart__wrap")
+                    div(class="cart__blocks")
+                        div(class="cart__blocks-card cart__blocks-good")
+                            div(class="cart__blocks-card-title")
+                                h2(id= "cart__block-title") Корзина             
+                        div(class="cart__blocks-card cart__blocks-delivery")
+                            div(class="cart__blocks-card-title")  
+                                h2 Доставка  
+                            div(class="cart__blocks-delivery-content-wrap")  
+                                div(class="cart__blocks-delivery-content")
+                                    strong Адрес доставки:
+                                    span Адрес не указан 
+                                    button Изменить 
+                        div(class="cart__blocks-card cart__blocks-personal") 
+                            div(class="cart__blocks-card-title") 
+                                h2 Ваши данные 
+                            form(class="row g-3 needs-validation" novalidate)
+                                div(class="col-md-6") 
+                                    label(for="validationCustom01" class="form-label cart_blocks-personal-label") Ваше имя 
+                                        small *
+                                    input(type="text" class="form-control" id="validationCustom01" value="" placeholder="Введите ваше имя" required)
+                                    div(class="valid-feedback") Успешно!
+                                div(class="col-md-6")   
+                                    label(for="validationCustom02" class="form-label cart_blocks-personal-label") Ваша фамилия
+                                        small *
+                                    input(type="text" class="form-control" id="validationCustom02" value="" placeholder="Введите вашу фамилию" required)
+                                    div(class="valid-feedback") Успешно! 
+                                div(class="col-md-6")  
+                                    label(for="validationCustom03" class="form-label cart_blocks-personal-label") Ваш телефон
+                                        small *
+                                    input(type="tel" name="phone_number" placeholder="+7 (900) 123-45-67"  class="form-control" id="validationCustom03" value="" required)
+                                    div(class="valid-feedback") Успешно!
+                                div(class="col-md-6") 
+                                    label(for="validationCustom04" class="form-label cart_blocks-personal-label") Ваш E-mail
+                                        small * 
+                                    input(type="email" name="email" placeholder="E-mail"  class="form-control" id="validationCustom04") 
+                                    div(class="valid-feedback") Успешно!
+                    div(class="cart__order cart__blocks-card")
+                        div(class="cart__order-head")
+                            span Итого:
+                            span(id= "cart__order-result" class="cart__order-head-price") 0 ₽
+                        div(class="cart__order-content")
+                            div(class="cart__order-content-item")
+                                span(id= "cart__order-amount") Товары: 0 шт.
+                                span(id= "cart__order-sum") 0 ₽  
+                            div(class="cart__order-content-item")
+                                span Доставка:
+                                span(id= "cart__order-delivery") 0 ₽ 
+                        div(class="cart__order-option")
+                            span Адрес:
+                            p Адрес не указан  
+                        div(class="cart__order-option") 
+                            span Дата доставки:
+                            p 13-18 сентября
+                        div(class="cart__order-option") 
+                            span Оплата:
+                            p Картой
+                        div(class="cart__order-btn") 
+                            button Оплатить заказ
+                        div(class="cart__order-agree")
+                            a(href = '/oferta') Я согласен с условиями Правил пользования торговой площадкой и правилами возврата 
+    script(src= 'js/cartPage.js')                        
+        include components/footer.pug 
+                                                                                                     

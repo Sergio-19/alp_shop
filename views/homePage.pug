@@ -1,0 +1,90 @@
+include components/head.pug
+    div(class= 'main')
+        include components/popup.pug
+        include components/alert.pug
+        include components/header.pug
+        div(class= 'content')
+            div(class= 'content__banner')
+                div(id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true")
+                    div(class="carousel-indicators")
+                        button(type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1")
+                        button(type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2")
+                        button(type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3")
+                    div(class="carousel-inner")  
+                        div(class="carousel-item active")  
+                            img(src="images/slide01.jpg" class="d-block w-100" alt="Скидки на оборудование Petzl до 65%")
+                        div(class="carousel-item")
+                            img(src="images/slide02.jpg" class="d-block w-100" alt="Petzl Rig, ID, Asap Скидки")
+                        div(class="carousel-item") 
+                            img(src="images/slide03.jpg" class="d-block w-100" alt="Petzl Volt Выгода 65%") 
+                    button(class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev") 
+                        span(class="carousel-control-prev-icon" aria-hidden="true")  
+                        span(class="visually-hidden") Previous 
+                    button(class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next") 
+                        span(class="carousel-control-next-icon" aria-hidden="true")  
+                        span(class="visually-hidden") Next 
+            div(class="container")
+                div(class="sale") 
+                    each val, index in category  
+                        a(href = `/goods?id=`+val['catid'] class="sale__card")
+                            div(class="sale__card-wrap")
+                                img(src=val['image'] alt = 'Карабины, блоки, ролики') 
+                div(class="popular") 
+                    div(class="popular__title")
+                        h2 Популярные товары
+                    div(class="popular__galery")
+                        a(href = '/popular' class="popular__card") 
+                            div(class="popular__card-img")
+                                img(src="https://bigwall.ru/upload/iblock/2a6/besedka_universal_prom_tekhno_krok.jpg" alt = 'alp')  
+                            div(class="popular__card-price")   
+                                p   
+                                    strong 294 ₽&nbsp;&nbsp;
+                                    span 2267 ₽ 
+                            div(class="popular__card-title")   
+                                p Здесь будет наименование товара
+                        a(href = '/popular' class="popular__card") 
+                            div(class="popular__card-img")
+                                img(src="https://bigwall.ru/upload/iblock/2a6/besedka_universal_prom_tekhno_krok.jpg" alt = 'alp')  
+                            div(class="popular__card-price")   
+                                p   
+                                    strong 294 ₽&nbsp;&nbsp;
+                                    span 2267 ₽ 
+                            div(class="popular__card-title")   
+                                p Здесь будет наименование товара
+                        a(href = '/popular' class="popular__card") 
+                            div(class="popular__card-img")
+                                img(src="https://bigwall.ru/upload/iblock/2a6/besedka_universal_prom_tekhno_krok.jpg" alt = 'alp')  
+                            div(class="popular__card-price")   
+                                p   
+                                    strong 294 ₽&nbsp;&nbsp;
+                                    span 2267 ₽ 
+                            div(class="popular__card-title")   
+                                p Здесь будет наименование товара
+                        a(href = '/popular' class="popular__card") 
+                            div(class="popular__card-img")
+                                img(src="https://bigwall.ru/upload/iblock/2a6/besedka_universal_prom_tekhno_krok.jpg" alt = 'alp')  
+                            div(class="popular__card-price")   
+                                p   
+                                    strong 294 ₽&nbsp;&nbsp;
+                                    span 2267 ₽ 
+                            div(class="popular__card-title")   
+                                p Здесь будет наименование товара
+                        a(href = '/popular' class="popular__card") 
+                            div(class="popular__card-img")
+                                img(src="https://bigwall.ru/upload/iblock/2a6/besedka_universal_prom_tekhno_krok.jpg" alt = 'alp')  
+                            div(class="popular__card-price")   
+                                p   
+                                    strong 294 ₽&nbsp;&nbsp;
+                                    span 2267 ₽ 
+                            div(class="popular__card-title")   
+                                p Здесь будет наименование товара
+                        a(href = '/popular' class="popular__card") 
+                            div(class="popular__card-img")
+                                img(src="https://bigwall.ru/upload/iblock/2a6/besedka_universal_prom_tekhno_krok.jpg" alt = 'alp')  
+                            div(class="popular__card-price")   
+                                p   
+                                    strong 294 ₽&nbsp;&nbsp;
+                                    span 2267 ₽ 
+                            div(class="popular__card-title")   
+                                p Здесь будет наименование товара                                                                                                                          
+        include components/footer.pug

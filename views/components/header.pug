@@ -1,0 +1,22 @@
+header 
+    div(class= 'container')
+        div(class= 'header__wrap')
+            div(class= 'header__logo')
+                div(id= 'hamb' class= 'header__logo-menu')
+                    i(class= 'fa fa-bars')
+                div(class= 'header__logo-name')
+                    a(href= '/') Alp_Shop
+            div(class= 'header__search') 
+                div(class= 'header__search-wrap')   
+                    i(class= 'fa fa-search')  
+                    input(type= 'text' placeholder="Я ищу...")  
+                    button(class="header__search-btn" type="button" ) Найти
+            div(class= 'header__cart') 
+                a(class="header__cart-profile" href= '/profile')  
+                    i(class="fa fa-user")  
+                    span Войти 
+                a(class="header__cart-cart" href = '/cart') 
+                    i(class= 'fa fa-shopping-cart')
+                    span Корзина  
+                    small(class= 'header__cart-round') 1
+                        
